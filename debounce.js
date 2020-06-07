@@ -15,7 +15,6 @@ export default function debounce(delay, callback, atBegin = false) {
   let timeId = -1
   let canceled = false
 
-  console.log('自己写的 debounce 函数:')
 
   function clearExistingTimeout() {
     if(timeId >= 0) {
