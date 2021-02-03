@@ -6,7 +6,7 @@
  * @return {Function} A new, throttled, function
  */
 export default function throttle(callback, delay, isTrailing = false) {
-  if (typeof callback != "function") {
+  if (typeof callback !== "function") {
     throw new Error("callback must be function.");
   }
 
@@ -21,8 +21,8 @@ export default function throttle(callback, delay, isTrailing = false) {
   }
 
   function wrapper(...args) {
-    let self = this;
-    let intervalTime = Date.now() - lastExec;
+    const self = this;
+    const intervalTime = Date.now() - lastExec;
 
     if (canceled) {
       return;
@@ -43,7 +43,7 @@ export default function throttle(callback, delay, isTrailing = false) {
     }
   }
 
-  wrapper.cancel = function () {
+  wrapper.cancel = function cancel() {
     clearExistingTimeout();
     canceled = true;
   };

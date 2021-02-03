@@ -7,7 +7,7 @@
  * @return {Function}  A new, debounce, function.
  */
 export default function debounce(callback, delay, atBegin = false) {
-  if (typeof callback != "function") {
+  if (typeof callback !== "function") {
     throw new Error("callback must be function.");
   }
 
@@ -22,8 +22,8 @@ export default function debounce(callback, delay, atBegin = false) {
   }
 
   function wrapper(...args) {
-    let self = this;
-    let intervalTime = Date.now() - lastExec;
+    const self = this;
+    const intervalTime = Date.now() - lastExec;
 
     if (canceled) {
       return;
