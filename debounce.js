@@ -44,7 +44,7 @@ export default function debounce(callback, delay, atBegin = false) {
     }
   }
 
-  wrapper.cancel = function () {
+  wrapper.cancel = function cancel() {
     clearExistingTimeout();
     canceled = true;
   };
