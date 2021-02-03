@@ -1,11 +1,11 @@
 /**
  *  节流函数，频繁触发的函数，在每隔一段时间内才调用一次
- * @param {Number} delay 节流函数的每次触发时间 毫秒
  * @param {Function} callback 要节流的函数
+ * @param {Number} delay 节流函数的每次触发时间 毫秒
  * @param {Boolean} [isTrailing]  是否尾部调用最后一次触发函数
  * @return {Function} A new, throttled, function
  */
-export default function throttle(delay, callback, isTrailing = false) {
+export default function throttle(callback, delay, isTrailing = false) {
   if (typeof callback != "function") {
     throw new Error("callback must be function.");
   }

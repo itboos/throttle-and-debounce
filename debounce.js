@@ -1,12 +1,12 @@
 /**
  * 防抖函数，可以决定是开头调用还是末尾调用， 在指定的时间内，只会调用一次，如果在时间间隔内又
  * 触发了函数，则重新计算时间
- * @param {Number} delay
  * @param {Function} callback
+ * @param {Number} delay
  * @param {Boolean} [atBegin] 是否头部调用, 默认为 false
  * @return {Function}  A new, debounce, function.
  */
-export default function debounce(delay, callback, atBegin = false) {
+export default function debounce(callback, delay, atBegin = false) {
   if (typeof callback != "function") {
     throw new Error("callback must be function.");
   }
